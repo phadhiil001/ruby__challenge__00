@@ -46,7 +46,7 @@ puts"#{message}"
 
 # QUESTION 3
 puts"Enter your sub total:"
-tot = gets
+tot = gets.chomp
 total = tot.to_f
 
 
@@ -62,3 +62,18 @@ puts"Subtotal: $#{total}"
 puts"PST: $#{PST_NEW.round(2)} - #{(PST * 100).round()}%"
 puts"GST: $#{GST_NEW.round(2)} - #{(GST * 100).round()}%"
 puts"Grand Total: $#{gd}"
+
+min = 5.00
+max = 20.00
+if (gd <= min)
+    # puts"Pocket Change"
+    message = 'Pocket Charge'
+elsif ((gd > min) && (gd < max))
+    # puts"Wallet Time"
+    message = 'Wallet Time'
+else
+    # puts"Charge It!"
+    message = 'Charge it!'
+end
+
+puts"#{message}"
